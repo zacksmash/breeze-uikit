@@ -23,8 +23,9 @@ class BreezeUIkitCommand extends Command
     protected function publishAssets()
     {
         File::delete(base_path('tailwind.config.js'));
-
         File::deleteDirectory(resource_path('css'));
+        File::deleteDirectory(resource_path('js'));
+        File::deleteDirectory(resource_path('views'));
 
         $this->callSilent('vendor:publish', ['--tag' => 'breeze-uikit-resources', '--force' => true]);
     }
