@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\File;
 
 class BreezeUIkitCommand extends Command
 {
-    public $signature = 'breeze-ui:uikit';
+    public $signature = 'breeze:uikit';
 
     public $description = 'Install UIkit preset, with views and resources';
 
@@ -17,8 +17,8 @@ class BreezeUIkitCommand extends Command
         $this->updateWebpackUrl();
         // $this->updateRoutes();
 
-        $this->comment('UIkit is now installed.');
-        $this->info('Remember to run npm i && npm run dev!');
+        $this->info('UIkit scaffolding installed successfully.');
+        $this->comment('Please execute the "npm install && npm run dev" command to build your assets.');
     }
 
     protected function publishAssets()
