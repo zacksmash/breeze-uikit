@@ -15,7 +15,6 @@ class BreezeUIkitCommand extends Command
     {
         $this->publishAssets();
         $this->updateWebpackUrl();
-        // $this->updateRoutes();
 
         $this->info('UIkit scaffolding installed successfully.');
         $this->comment('Please execute the "npm install && npm run dev" command to build your assets.');
@@ -39,14 +38,6 @@ class BreezeUIkitCommand extends Command
                 env('APP_URL'),
                 File::get(base_path('webpack.mix.js'))
             )
-        );
-    }
-
-    protected function updateRoutes()
-    {
-        File::append(
-            base_path('routes/web.php'),
-            "\nRoute::prefix('user')->middleware(['auth', 'verified'])->group(function () {\n\tRoute::view('profile', 'profile.show');\n});\n"
         );
     }
 }
