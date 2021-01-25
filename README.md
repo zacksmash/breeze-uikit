@@ -11,7 +11,7 @@ composer require zacksmash/breeze-uikit
 Next, you'll need to run the install command:
 
 ```bash
-php artisan breeze-ui:uikit
+php artisan breeze:uikit
 ```
 
 This command will publish **BreezeUIkits's** views and resources to your project.
