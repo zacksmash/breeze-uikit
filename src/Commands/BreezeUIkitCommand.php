@@ -3,6 +3,7 @@
 namespace Zacksmash\BreezeUIkit\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 
 class BreezeUIkitCommand extends Command
@@ -13,6 +14,8 @@ class BreezeUIkitCommand extends Command
 
     public function handle()
     {
+        Artisan::call('breeze:install');
+        
         $this->publishAssets();
         $this->updateWebpackUrl();
 
